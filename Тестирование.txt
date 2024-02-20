@@ -1,0 +1,53 @@
+[TestClass]
+public class CalculationTests
+{
+    [TestMethod]
+    [ExpectedException(typeof(DivideByZeroException))]
+    public void Test_DivisionByZero()
+    {
+        // Arrange
+        double x = 0;
+        double N = 1;
+        
+        // Act
+        double result = 1 / (x - N);
+
+        // Assert - Exception is expected to be thrown
+    }
+}
+
+[TestClass]
+public class CalculationTests
+{
+    [TestMethod]
+    [ExpectedException(typeof(OverflowException))]
+    public void Test_RangeOverflow()
+    {
+        // Arrange
+        double x = double.MaxValue;
+        double N = 1;
+        
+        // Act
+        double result = 1 / (x - N);
+
+        // Assert - Exception is expected to be thrown
+    }
+}
+
+[TestClass]
+public class CalculationTests
+{
+    [TestMethod]
+    public void Test_Calculation1()
+    {
+        // Arrange
+        double x = 2;
+        double N = 1;
+        
+        // Act
+        double result = 1 / (x - N);
+
+        // Assert
+        Assert.AreEqual(0.5, result, 0.001);
+    }
+}
